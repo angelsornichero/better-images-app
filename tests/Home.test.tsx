@@ -1,28 +1,17 @@
 import { render, screen, cleanup } from '@testing-library/react'
-import { describe, it, afterEach } from 'vitest'
+import { describe, it, afterEach, beforeEach } from 'vitest'
+import Home from '../src/pages/index'
 
-const Home = () => {
-	return (
-		<>
-			<main>
-				<h1>Better images</h1>
-			</main>
-			<footer>
-				<span>Hecho con cloudinary</span>
-			</footer>
-		</>
-	)
-}
 
 describe('Home', () => {
 	afterEach(cleanup)
-    
-	it('should render', () => {
-		render(<Home />)
+	beforeEach(() => render(<Home />))
+	
+	it('should render title', () => {
+		screen.getByText('Better Images')
 	})
 
-	it('should render title', () => {
-		render(<Home/>)
-		screen.getByText('Better images')
+	it('should render footer', () => {
+		screen.getByText('Made with')
 	})
 })
