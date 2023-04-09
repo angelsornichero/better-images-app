@@ -1,6 +1,5 @@
 'use client'
 import { useCallback, useState } from 'react'
-// import { Cloudinary } from '@cloudinary/url-gen'
 import { useDropzone } from 'react-dropzone'
 
 type file = string | null
@@ -20,7 +19,7 @@ export default function Form() {
 		onDrop, 
 		maxFiles:1, 
 		accept: 
-		{'image/png': ['.png', '.jpg']}
+		{'image/png': ['.png', '.jpg', '.webpg']}
 	})
 	
 
