@@ -7,7 +7,7 @@ export const imagesSlice = createSlice({
 	name: 'image',
 	initialState,
 	reducers: {
-		addImage: (state, action: PayloadAction<Image>) => {
+		uploadImage: (state, action: PayloadAction<Image>) => {
 			const { name, url } = action.payload
 			state.name = name
 			state.url = url
@@ -18,4 +18,4 @@ export const imagesSlice = createSlice({
 
 export default imagesSlice.reducer
 
-export const { addImage } = imagesSlice.actions
+export const { uploadImage } = imagesSlice.actions

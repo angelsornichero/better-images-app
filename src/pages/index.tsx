@@ -5,7 +5,6 @@ import Form from '../components/Form'
 import TitleSection from '@/components/TitleSection'
 
 export default function Home() {
-	// console.log('Hello world')
 	return (
 		<>
 			<Head>
@@ -17,8 +16,9 @@ export default function Home() {
 			<Logo />
 			<main>
 				<TitleSection />
-				<section className='flex justify-center'>
+				<section className='flex justify-around m-16'>
 					<Form />
+					<div className='border-dashed border-2 border-gray-300 rounded-lg w-[700px] h-[400px] bg-gray-200'></div>
 				</section>
 			</main>
 			<Footer />
