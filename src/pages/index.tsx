@@ -3,6 +3,8 @@ import Logo from '../components/Logo'
 import Footer from '../components/Footer'
 import Form from '../components/Form'
 import TitleSection from '@/components/TitleSection'
+import TransformImages from '@/components/TrasformImages'
+import TransformButton from '@/components/ButtonTransformer'
 
 export default function Home() {
 	return (
@@ -16,9 +18,14 @@ export default function Home() {
 			<Logo />
 			<main>
 				<TitleSection />
-				<section className='flex justify-around m-16'>
-					<Form />
-					<div className='border-dashed border-2 border-gray-300 rounded-lg w-[700px] h-[400px] bg-gray-200'></div>
+				<section>
+					<div className='flex justify-around m-12'>
+						<Form />
+						<TransformImages />
+					</div>
+					<div className='flex justify-center'>
+						<TransformButton />
+					</div>
 				</section>
 			</main>
 			<Footer />

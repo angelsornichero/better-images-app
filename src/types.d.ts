@@ -1,10 +1,12 @@
 
 export interface Image {
     url: string | null;
-    name: string
+    name: string;
+    transformed: boolean;
+    rawFile: string | null | File | Blob
 }
 
-export interface File { 
+export interface FileModel { 
     path: string;
     name: string;
     lastModified: number;
