@@ -10,11 +10,15 @@ export default function Form() {
 	const { uploadImageAction } = useImageActions()
 
 	const onDrop = useCallback((acceptedFiles: FileWithPath[]) => {
-		acceptedFiles.forEach((file: FileWithPath) => {
+		acceptedFiles.forEach(async (file: FileWithPath) => {
+			const fileBlob = new Blob([file])
+			console.log(fileBlob)
+			//Save
 			const urlFile = URL.createObjectURL(file)
-			console.log(urlFile)
 			setSelectedFile(urlFile)
-			uploadImageAction({ name: file.name, url: urlFile })
+			uploadImageAction({ name: file.name, url: urlFile, transformed: false, rawFile: fileBlob as Blob })
+			
+			
 		})
 		
 	}, [])
