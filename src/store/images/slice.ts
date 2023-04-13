@@ -8,10 +8,11 @@ export const imagesSlice = createSlice({
 	initialState,
 	reducers: {
 		uploadImage: (state, action: PayloadAction<Image>) => {
-			const { name, url, rawFile } = action.payload
+			const { name, url, rawFile, transformed } = action.payload
 			state.name = name
 			state.url = url
 			state.rawFile = rawFile
+			state.transformed = transformed
 			return state
 		}
 	} 

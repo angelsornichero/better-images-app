@@ -17,8 +17,6 @@ export default function Form() {
 			const urlFile = URL.createObjectURL(file)
 			setSelectedFile(urlFile)
 			uploadImageAction({ name: file.name, url: urlFile, transformed: false, rawFile: fileBlob as Blob })
-			
-			
 		})
 		
 	}, [])
@@ -35,12 +33,12 @@ export default function Form() {
 		<>
 			{
 				selectedFile !== null 
-					? <img className='aspect-video w-[700px] h-[400px] rounded-lg'  src={selectedFile} />
+					? <img className='aspect-video w-[800px] h-[450px] rounded-lg'  src={selectedFile} />
 					: <div
 						{...getRootProps()}
 						id='dropzone' 
 						role={'form'}
-						className="shadow-2xl border-dashed border-2 border-gray-300 rounded-lg aspect-video w-[700px] h-[400px] flex items-center justify-center flex-col"
+						className="shadow-2xl border-dashed border-2 border-gray-300 rounded-lg aspect-video w-[800px] h-[450px] flex items-center justify-center flex-col"
 					>
 						<p>Drag or drop some files here, or click to select files</p>
 						<input type={'file'} {...getInputProps()} />
